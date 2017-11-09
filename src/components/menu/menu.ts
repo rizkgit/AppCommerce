@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { HomeComponent } from '../home/home';
 import { ApiProvider } from '../../providers/api/api';
 import { Observable } from 'rxjs/Observable';
@@ -12,8 +12,9 @@ import { CategoryProductsComponent } from '../category-products/category-product
 export class MenuComponent {
   rootPage = HomeComponent;
   RootCategories$;
+  @ViewChild('content') navCtrl: NavController;
   
-  constructor(public api: ApiProvider,public navCtrl: NavController) {
+  constructor(public api: ApiProvider) {
     
   }
   ionViewDidLoad(){
@@ -21,7 +22,10 @@ export class MenuComponent {
   }
 
   openCatProducts(cat){
-      this.navCtrl.push(CategoryProductsComponent,{'cat':cat,'page':1});
+      this.navCtrl.setRoot(CategoryProductsComponent,{'cat':cat,'page':1});
   }
 
+  openHome(){
+    this.navCtrl.setRoot(HomeComponent);
+  }
 }
