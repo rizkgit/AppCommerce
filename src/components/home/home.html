@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      Home Component
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content no-padding>
+    <ion-card no-padding>
+ <ion-slides *ngIf="FeaturedProducts$ && FeaturedProducts$.length" autoplay="2000" pager="true">
+   <ion-slide *ngFor='let p of FeaturedProducts$'>     
+        <img [src]='p.IMG_URL'>    
+   </ion-slide>
+ </ion-slides>
+</ion-card>
+ <ion-list>
+   <ion-item *ngFor='let p of MoreProducts$'>
+    <ion-thumbnail item-left>
+      <img [src]='p.IMG_URL'>      
+    </ion-thumbnail>    
+    <h2>{{p.TITLE}}</h2>
+    <p>
+      <span [innerHTML]="p.DESCRIPTION.substring(0,20) + '...'"></span><br/>
+      <span [innerHTML]='p.PRICE'></span>
+    </p>
+    <button ion-button clear icon item-right>
+      <ion-icon name='arrow-forward'></ion-icon>  
+    </button>
+   </ion-item>
+ </ion-list>
+ <ion-infinite-scroll (ionInfinite)="getMoreProducts($event)">
+    <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>

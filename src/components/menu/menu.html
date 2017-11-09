@@ -1,0 +1,23 @@
+<ion-menu [content]="content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-card>
+      <img src="./assets/imgs/menu.jpg">
+      <div class="card-title">App Commere</div>
+      <div class="card-subtitle">Keep Shopping</div>
+    </ion-card>
+    <ion-list>
+      <ion-item menuClose *ngFor='let cat of RootCategories$|async'>
+         <ion-icon item-left [name]='cat.ICON' large></ion-icon>
+          <h2>{{cat.TITLE}}</h2>
+          <p [innerHTML]='cat.DESCRIPTION'></p>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<ion-nav id="nav" #content [root]="rootPage"></ion-nav>

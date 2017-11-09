@@ -1,0 +1,25 @@
+menu {
+    ion-card
+    {
+        position:relative;
+        width:100%;
+        margin:0px;
+        text-align: center;
+    }
+    .card-title
+    {
+        position: absolute;
+        text-align: center;
+        top:75%;
+        width:100%;
+        font-weight: bold;
+    }
+    .card-subtitle
+    {
+        position: absolute;
+        text-align: center;
+        top:85%;
+        width:100%;
+        font-weight: bold;
+    }
+}
