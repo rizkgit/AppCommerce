@@ -11,7 +11,7 @@
       <div class="card-subtitle">Keep Shopping</div>
     </ion-card>
     <ion-list>
-      <ion-item menuClose *ngFor='let cat of RootCategories$|async'>
+      <ion-item (click)='openCatProducts(cat)' menuClose *ngFor='let cat of RootCategories$|async'>
          <ion-icon item-left [name]='cat.ICON' large></ion-icon>
           <h2>{{cat.TITLE}}</h2>
           <p [innerHTML]='cat.DESCRIPTION'></p>

@@ -28,4 +28,7 @@ export class ApiProvider {
     return this.http.get(this.BaseURL + 'RootCategories');
   }
 
+  getCategoryProducts(CATEGORY_ID,page): Observable<any>{
+    return this.http.post(this.BaseURL + 'CategoryProducts',{'CATEGORY_ID':CATEGORY_ID, 'page':page});
+  }
 }

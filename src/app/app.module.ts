@@ -9,12 +9,14 @@ import { MyApp } from './app.component';
 import { MenuComponent } from '../components/menu/menu';
 import { HomeComponent } from '../components/home/home';
 import { ApiProvider } from '../providers/api/api';
+import { CategoryProductsComponent } from '../components/category-products/category-products';
 
 @NgModule({
   declarations: [
     MyApp,
     MenuComponent,
-    HomeComponent
+    HomeComponent,
+    CategoryProductsComponent
   ],
   imports: [
     BrowserModule,
@@ -25,7 +27,8 @@ import { ApiProvider } from '../providers/api/api';
   entryComponents: [
     MyApp,
     MenuComponent,
-    HomeComponent
+    HomeComponent,
+    CategoryProductsComponent
   ],
   providers: [
     StatusBar,
