@@ -17,7 +17,7 @@
  </ion-slides>
 </ion-card>
  <ion-list>
-   <ion-item *ngFor='let p of MoreProducts$'>
+   <ion-item *ngFor='let p of MoreProducts$' (click)='poceedToProductDetails(p)'>
     <ion-thumbnail item-left>
       <img [src]='p.IMG_URL'>      
     </ion-thumbnail>    

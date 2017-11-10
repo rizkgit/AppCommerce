@@ -4,6 +4,7 @@ import { ApiProvider } from '../../providers/api/api';
 import { Observable } from 'rxjs/Observable';
 import { NavController } from 'ionic-angular';
 import { CategoryProductsComponent } from '../category-products/category-products';
+import { ProductDetailsComponent } from '../product-details/product-details';
 
 @Component({
   selector: 'menu',
@@ -28,4 +29,6 @@ export class MenuComponent {
   openHome(){
     this.navCtrl.setRoot(HomeComponent);
   }
+
+  
 }

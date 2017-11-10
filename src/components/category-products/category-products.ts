@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams, ToastController } from 'ionic-angular';
 import { ApiProvider } from '../../providers/api/api';
+import { ProductDetailsComponent } from '../product-details/product-details';
 
 
 @Component({
@@ -13,7 +14,7 @@ export class CategoryProductsComponent {
   category = null;
   MoreProducts$ = [];
   
-  constructor(public navParams: NavParams, public api: ApiProvider,public toastCtl: ToastController) {
+  constructor(public navParams: NavParams, public api: ApiProvider,public toastCtl: ToastController, public navCtrl: NavController) {
     this.category = this.navParams.get("cat");
     this.page = this.navParams.get("page");
   }
@@ -51,6 +52,10 @@ export class CategoryProductsComponent {
       }
       
     });
+  }
+
+  poceedToProductDetails(product){
+    this.navCtrl.push(ProductDetailsComponent,{'product':product});
   }
 
 }

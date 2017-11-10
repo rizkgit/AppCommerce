@@ -10,13 +10,15 @@ import { MenuComponent } from '../components/menu/menu';
 import { HomeComponent } from '../components/home/home';
 import { ApiProvider } from '../providers/api/api';
 import { CategoryProductsComponent } from '../components/category-products/category-products';
+import { ProductDetailsComponent } from '../components/product-details/product-details';
 
 @NgModule({
   declarations: [
     MyApp,
     MenuComponent,
     HomeComponent,
-    CategoryProductsComponent
+    CategoryProductsComponent,
+    ProductDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +30,8 @@ import { CategoryProductsComponent } from '../components/category-products/categ
     MyApp,
     MenuComponent,
     HomeComponent,
-    CategoryProductsComponent
+    CategoryProductsComponent,
+    ProductDetailsComponent
   ],
   providers: [
     StatusBar,

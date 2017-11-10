@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{product.TITLE}}</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content no-padding>
+  <ion-card>
+    <ion-slides pager>
+      <ion-slide  *ngFor='let pimg of ProductImages$|async'>
+        <img style='margin:auto;' [src]="pimg.IMG_URL">
+      </ion-slide>
+    </ion-slides>
+    <ion-card-content>      
+      <p>{{product.DESCRIPTION}}</p>  
+    </ion-card-content>
+  </ion-card>  
+</ion-content>

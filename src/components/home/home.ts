@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { ApiProvider } from '../../providers/api/api';
 import { Observable } from 'rxjs/Observable';
-import { ToastController } from 'ionic-angular';
+import { ToastController, NavController } from 'ionic-angular';
+import { ProductDetailsComponent } from '../product-details/product-details';
 
 /**
  * Generated class for the HomeComponent component.
@@ -18,7 +19,11 @@ export class HomeComponent {
   FeaturedProducts$ = [];
   MoreProducts$ = [];
   page = 0;
-  constructor(public api: ApiProvider,public toastCtl: ToastController) {
+  constructor(
+          public api: ApiProvider,
+          public toastCtl: ToastController,
+          public NavCtl: NavController
+      ) {
   }
 
   ionViewDidLoad() {
@@ -69,6 +74,10 @@ export class HomeComponent {
       }
       
     });
+  }
+
+  poceedToProductDetails(product){
+    this.NavCtl.push(ProductDetailsComponent,{'product':product});
   }
 
 }
