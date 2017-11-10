@@ -17,4 +17,25 @@
       <ion-icon name='basket'></ion-icon>Add To Cart
     </button>
   </ion-card>  
+  <ion-card>
+    <ion-card-content>
+      <b style='text-align:left'>Reviews</b>
+      <ion-grid>
+          <ion-row *ngFor='let review of ProductReviews$|async'>
+            <ion-col col-4>
+              <p style='font-weight:bold;'>{{review.REVIEWER}}</p>
+              <ion-icon *ngIf='review.RATING > 0' small name='star' color='MyGold'></ion-icon>
+              <ion-icon *ngIf='review.RATING > 1' small name='star' color='MyGold'></ion-icon>
+              <ion-icon *ngIf='review.RATING > 2' small name='star' color='MyGold'></ion-icon>
+              <ion-icon *ngIf='review.RATING > 3' small name='star' color='MyGold'></ion-icon>
+              <ion-icon *ngIf='review.RATING > 4' small name='star' color='MyGold'></ion-icon>
+            </ion-col>
+            <ion-col col-8>
+              <p>{{review.MSG}}</p>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+    </ion-card-content>
+    
+  </ion-card>
 </ion-content>

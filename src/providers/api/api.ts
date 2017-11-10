@@ -35,4 +35,8 @@ export class ApiProvider {
   getProductImages(PRODUCT_ID): Observable<any>{
     return this.http.post(this.BaseURL + 'ProductImages',{'PRODUCT_ID':PRODUCT_ID});
   }
+
+  getProductReviews(PRODUCT_ID): Observable<any>{
+    return this.http.post(this.BaseURL + 'ProductReviews',{'PRODUCT_ID':PRODUCT_ID});
+  }
 }
