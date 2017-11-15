@@ -23,7 +23,7 @@ export class MenuComponent {
   }
 
   openCatProducts(cat){
-      this.navCtrl.setRoot(CategoryProductsComponent,{'cat':cat,'page':1});
+    this.navCtrl.setRoot(CategoryProductsComponent,{'cat':cat,'page':1});
   }
 
   openHome(){

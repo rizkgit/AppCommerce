@@ -33,7 +33,8 @@ export class CategoryProductsComponent {
     {
       this.page +=1;
     }
-    this.api.getCategoryProducts(this.category.ID,this.page).subscribe((data)=>{
+    
+    this.api.getCategoryProducts(this.category.CATEGORY_ID,this.page).subscribe((data)=>{
       if (data != null){
         data.forEach(element => {
           this.MoreProducts$.push(element);
